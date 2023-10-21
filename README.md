@@ -75,7 +75,7 @@ Dah by Plotly is a Python framework that is used to build web applications with 
 
 - Clone this repository
 -	Install python and pip from www.python.org/download. 
--	Install MongoDB from https://www.mongodb.com/try/download/community. 
+-	Install MongoDB server from https://www.mongodb.com/try/download/community. 
 -	Install the MongoDB shell from https://www.mongodb.com/try/download/shell.
 -	Open the command line.
 -	Install the PyMongo library using: pip install pymongo
