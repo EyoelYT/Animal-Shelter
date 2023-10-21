@@ -6,7 +6,7 @@
 
 ## Interactive Filter Functionality Options
 
-![image](https://github.com/EyoelYT/Animal-Shelter/assets/109878492/0e2cf06e-e231-4cfe-aeb9-8db16fd5c8ea)
+![](Animation1.gif)
 
 The above graphics interchange shows the functionality of radio buttons that provide data for the preferred animals for the categories of Water Rescue, Mountain or Wilderness Rescue, and Disaster/Individual Rescue. 
 When a radio button is pressed, for example “Water Rescue”, the data table will be updated to show the animals in the animal shelter that can qualify for water rescues. 
@@ -15,7 +15,7 @@ The map will show the location of where the first animal in the filtered data cu
 
 ### Additional Filter Functionality
 
-![image](https://github.com/EyoelYT/Animal-Shelter/assets/109878492/7efa14a0-31fd-4530-aa75-93f9f17c936b)
+![image](Animation2.gif)
 
 The above graphics interactive showcases additional filter functionalities that can be utilized to make searching easier. Bear in mind that the radio button must be set to ‘Reset’ since it overrides this section.
 If an animal type check box is checked, the data table will update to reflect the changes. For example, if only ‘Bird’ is checked, the data table will update to show only the list of birds in the database. If both ‘Bird' and ‘Livestock’ are checked, the data table will update to show a table containing both types of animals. 
@@ -24,13 +24,13 @@ The check box and the dropdown intersect in their results, which means if ‘Dog
 
 ### Pagination
 
-![image](https://github.com/EyoelYT/Animal-Shelter/assets/109878492/e0dff9a7-d366-4c30-b191-c5154528d46d)
+![image](Animation3.gif)
 
 Pagination works by selecting the number of rows to be shown at a time under the dropdown ‘Rows per page.’
 
 ### Advanced Filtering and Sorting
 
-![image](https://github.com/EyoelYT/Animal-Shelter/assets/109878492/ea9b7142-33e6-4cb1-98db-63d06b4946dd)
+![image](Animation4.gif)
 
 It is possible to sort and filter out the shown data table.
 
@@ -71,7 +71,7 @@ Dah by Plotly is a Python framework that is used to build web applications with 
 -	Ensuring multiple filters (like the dropdown, checklist, and radio buttons) work together seamlessly was challenging. I made it so that they don’t interfere with each other to produce errors. 
 -	It was challenging to design a user-friendly interface with Dash since it focuses more on functionality. I had to use external CSS to improve the application’s aesthetics and user experience. 
 
-## Reproducing the Project
+## How to Reproduce the Project
 
 - Clone this repository
 -	Install python and pip from www.python.org/download. 
