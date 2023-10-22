@@ -73,53 +73,67 @@ Dah by Plotly is a Python framework that is used to build web applications with 
 
 ## How to Reproduce the Project
 
-- Clone this repository
--	Install python and pip from www.python.org/download. 
--	Install MongoDB server from https://www.mongodb.com/try/download/community. 
--	Install the MongoDB shell from https://www.mongodb.com/try/download/shell.
--	Open the command line.
--	Install the PyMongo library using: pip install pymongo
--	Install the Dash Framework using: pip install dash
--	Install Pandas library using: pip install pandas
--	Install numpy using: pip install numpy
--	Navigate to your .csv directory: cd /(enter directory here without the brackets)
--	Import the csv database into mongoDB using (you can change the username, password, port and host to your liking, This would be the access point of the main admin):<br/>
+1. Clone this repository
+2. Install python and pip from www.python.org/download.
+3. Install MongoDB server from https://www.mongodb.com/try/download/community.
+4. Install the MongoDB shell from https://www.mongodb.com/try/download/shell.
+5. Open the command line.
+6. Install the PyMongo library using: pip install pymongo
+7. Install the Dash Framework using: pip install dash
+8. Install Pandas library using: pip install pandas
+9. Install numpy using: pip install numpy
+10. Navigate to your .csv directory: cd /(enter directory here without the brackets)
+11. Import the csv database into mongoDB using (you can change the username, password, port and host to your liking, This would be the access point of the main admin):<br/>
 ```mongoimport --username="${MONGO_USER}" --password="${MONGO_PASS}" --port=${MONGO_PORT} --host=${MONGO_HOST} --db AAC --collection animals --authenticationDatabase admin --drop --type csv --headerline ./(Enter csv file name here without the brackets).csv```
--	Connect to MongoDB and switch to the mongo shell using: mongosh
--	Check to see if the database has been imported into the Mongo shell using the following command. It will show an “AAC” database.<br/>
+12. Connect to MongoDB and switch to the mongo shell using: mongosh
+13. Check to see if the database has been imported into the Mongo shell using the following command. It will show an “AAC” database.<br/>
 ```show dbs```
-- Make sure that all environment variables and files are in the same directory,
--	Open the Python file “mongoDataAccessObject.py” using an IDE of your choice.
-  -	In this file, there is a class that leverages PyMongo. 
-  -	The host and port variables can be changed according to your previous mongoimport command.
-  -	It contains all the necessary methods to manipulate data in MongoDB.
-  -	Create (addAnimal):<br/>
-    •	Input: A dictionary representing an animal record.<br/>
-    •	Action: Insert the provided record into the Animal collection.<br/>
-    •	Output: Returns True if the operation is successful.<br/>
-  -	Read (getAllAnimals):<br/>
-    •	Input: None<br/>
-    •	Action: Fetches all records from the Animal collection.<br/>
-    •	Output: Returns a list of dictionaries, each representing an animal record.<br/>
-  -	Read with selected criteria (getAllAnimalsWithCriteria):<br/>
-    •	Input: A dictionary containing the query criteria.<br/>
-    •	Action: Fetches all records from the Animal collection that match with criteria.<br/>
-    •	Output: Returns a list of dictionaries with animal documents that match the criteria.<br/>
-  -	Update (modifyAnimals):<br/>
-    •	Input:<br/>
-            -	criteria: A dictionary with key-value pairs specifying which records to update.<br/>
-            -	updates: A dictionary representing the changes to be made.<br/>
-    •	Action: Updates records in the Animal collection that match the given criteria with the provided updates.<br/>
-    •	Output: Returns the number of records modified.<br/>
-  -	Delete (removeAnimals):<br/>
-    •	Input: ‘criteria’: A dictionary with key-value pairs specifying which records to delete.<br/>
-    •	Action: Deletes records from the Animal collection that match the given criteria.<br/>
-    •	Output: Returns the number of records deleted.<br/>
--	Open the file “Dashboard.ipynb”.
-  -	Here you’ll find the dashboard code that accesses the imported MongoDB data via the Python crud app “mongoDataAccessObject.py”. It creates a Dash interface website on the said port.
-  -	The username and password are hard coded but can be changed accordingly. 
-  -	Run this file and click on the Dash app port to access the Dash app on a browser.
+14. Make sure that all environment variables and files are in the same directory,
+15. Open the Python file “mongoDataAccessObject.py” using an IDE of your choice.<br/>
+        -	In this file, there is a class that leverages PyMongo. <br/>
+        -	The host and port variables can be changed according to your previous mongoimport command.<br/>
+        -	It contains all the necessary methods to manipulate data in MongoDB.<br/>
+                -	Create (addAnimal):<br/>
+                        •	Input: A dictionary representing an animal record.<br/>
+                        •	Action: Insert the provided record into the Animal collection.<br/>
+                        •	Output: Returns True if the operation is successful.<br/>
+                -	Read (getAllAnimals):<br/>
+                        •	Input: None<br/>
+                        •	Action: Fetches all records from the Animal collection.<br/>
+                        •	Output: Returns a list of dictionaries, each representing an animal record.<br/>
+                -	Read with selected criteria (getAllAnimalsWithCriteria):<br/>
+                        •	Input: A dictionary containing the query criteria.<br/>
+                        •	Action: Fetches all records from the Animal collection that match with criteria.<br/>
+                        •	Output: Returns a list of dictionaries with animal documents that match the criteria.<br/>
+                -	Update (modifyAnimals):<br/>
+                        •	Input:<br/>
+                                -	criteria: A dictionary with key-value pairs specifying which records to update.<br/>
+                                -	updates: A dictionary representing the changes to be made.<br/>
+                        •	Action: Updates records in the Animal collection that match the given criteria with the provided updates.<br/>
+                        •	Output: Returns the number of records modified.<br/>
+                -	Delete (removeAnimals):<br/>
+                        •	Input: ‘criteria’: A dictionary with key-value pairs specifying which records to delete.<br/>
+                        •	Action: Deletes records from the Animal collection that match the given criteria.<br/>
+                        •	Output: Returns the number of records deleted.<br/>
+16. Open the file “Dashboard.ipynb”.
+        -	Here you’ll find the dashboard code that accesses the imported MongoDB data via the Python crud app “mongoDataAccessObject.py”. It creates a Dash interface website on the said port.
+        -	The username and password are hard coded but can be changed accordingly. 
+        -	Run this file and click on the Dash app port to access the Dash app on a browser.
 
+## Writing Maintainable, Readable, and Adaptable Programs
 
+The CRUD functions were made in modular design, which promotes maintainability as each function serves a single responsibility, making it easier to manage and update. The clear documentation within the code (including comments and docstrings) makes it clear what the purpose, input, output, and logic of the functions are. 
+
+Descriptive naming conventions were used for variables, functions, and classes to enhance the readability of the code and make it more accessible for other developers. The key parameters and settings were made configurable to ensure adaptability. 
+
+## Approaching Problems as a Computer Scientist
+
+First, there was a thorough analysis of the client's requirements in order to select the most suitable technology stack. The application then was built iteratively by starting from an MVC (minimal viable product) and gradually adding features based on requests and feedback. Every requirement was broken down into small task problems to be solved. After all of those pieces were solved, comprehensive testing and validation were done so that all parts of the application functioned as expected. Documentation was also added for the future maintainers of the project.
+
+## The Role of Computer Scientists
+
+Computer Scientists play a critical role in the development of technology, solving complex problems, and optimizing systems and processes. In projects such as this, their cumulative skills lead to improved decision-making, optimized operations, and improved data accessibility, which contributes to better strategic planning, better resource management, and better performance of the company. 
+
+In future projects that require database creation, I would use some strategies such as proper normalization to reduce redundancy and design it for scalability. I would also try to implement a robust security measure. 
 
 
